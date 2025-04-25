@@ -2,7 +2,7 @@ import React from 'react';
 import { ReceiptData, TableData, convertJsonToTableData } from '@/lib/recipt-utils';
 
 interface DataTableProps {
-  jsonData: ReceiptData;
+  jsonData: any[];
 }
 
 export const ReciptTable: React.FC<DataTableProps> = ({ jsonData }) => {

@@ -5,11 +5,7 @@ import { UploadRecipt } from "@/components/upload-recipt";
 import { useState } from "react";
 
 export default function Home() {
-  const [result, setResult] = useState<any>(null);
-  const onFinishExtract = (result: any) => {
-    console.log(result);
-    setResult(result);
-  }
+  const [result, setResult] = useState<any[]>([]);
 
   return (
     <div className="p-4">
@@ -21,13 +17,13 @@ export default function Home() {
         <div className="grid grid-cols-2 gap-4">
           <div className="p-4 border border-dashed rounded-lg space-y-4">
             <h4 className="font-semibold tracking-tighter">Upload your receipt</h4>
-            <UploadRecipt onFinishExtract={onFinishExtract} />
+            <UploadRecipt onFinishExtract={(result) => setResult(prev => [...prev, result])} />
           </div>
           <div className="p-4 border border-dashed rounded-lg space-y-4">
             <h4 className="font-semibold tracking-tighter">Result</h4>
             {result && (
               <pre className="font-mono p-4 text-sm rounded-lg bg-muted overflow-x-auto whitespace-pre-wrap break-words max-w-full">
-                {JSON.stringify(result, null, 2)}
+                {JSON.stringify(result[0], null, 2)}
               </pre>
             )}
           </div>
