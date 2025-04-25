@@ -25,7 +25,11 @@ export default function Home() {
           </div>
           <div className="p-4 border border-dashed rounded-lg space-y-4">
             <h4 className="font-semibold tracking-tighter">Result</h4>
-            {result && <pre className="font-mono p-4 text-sm rounded-lg bg-muted">{JSON.stringify(result, null, 2)}</pre>}
+            {result && (
+              <pre className="font-mono p-4 text-sm rounded-lg bg-muted overflow-x-auto whitespace-pre-wrap break-words max-w-full">
+                {JSON.stringify(result, null, 2)}
+              </pre>
+            )}
           </div>
         </div>
         {result && <ReciptTable jsonData={result} />}
