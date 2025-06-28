@@ -1,6 +1,6 @@
 # TrackFlow
 
-![TrackFlow](demo.png)
+![TrackFlow](https://raw.githubusercontent.com/ahmadrosid/track-flow/refs/heads/main/demo.png)
 
 TrackFlow is a web application that allows users to upload receipts and extract relevant information from them, such as the date, business name, service name, and service amount. The extracted data is then displayed in a table format for easy viewing and analysis.
 
